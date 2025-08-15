@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import HamButton from './HamButton';
-
+import logoImage from '../assets/logo.png';
 const links = [
   { id: 'home', label: 'HOME' },
   { id: 'about', label: 'ABOUT' },
@@ -10,7 +10,6 @@ const links = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-
   const scrollToId = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -19,13 +18,20 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className="fixed inset-x-0 top-0 z-50  ">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         {/* 왼쪽: 햄버거(모바일) */}
-        <HamButton isOpen={open} onToggle={setOpen} label="navigation menu" />
-
+        <HamButton isOpen={open} onToggle={setOpen} label="navigation menu" className="md:hidden" />
+        <img
+          src={logoImage}
+          alt="로고"
+          width={50}
+          height={50}
+          className="rounded-full absolute left-16 cursor-pointer"
+          onClick={() => scrollToId('home')}
+        />
         {/* 오른쪽: 링크(데스크톱) */}
-        <nav className="absolute right-32 text-2xl flex  items-center gap-8 ">
+        <nav className="absolute right-32 text-2xl hidden md:flex  items-center gap-8 ">
           {links.map((l) => (
             <button
               key={l.id}
@@ -40,7 +46,7 @@ export default function Header() {
 
       {/* 모바일 드롭다운 메뉴 */}
       {open && (
-        <nav className="md:hidden border-t bg-white">
+        <nav className="md:hidden border-t border-gray-300 bg-white">
           <ul className="flex flex-col p-4">
             {links.map((l) => (
               <li key={l.id}>
