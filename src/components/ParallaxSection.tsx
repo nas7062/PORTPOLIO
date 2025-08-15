@@ -1,58 +1,79 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, type Variants } from 'framer-motion';
 import { useRef } from 'react';
 import profileImage from '../assets/profile.jpg';
+
+const container: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08, when: 'beforeChildren' },
+  },
+};
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: 'easeOut' },
+  },
+};
+
 export default function ParallaxSection() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
-  const yBg = useTransform(scrollYProgress, [0, 1], [0, -120]); // 배경 위로
-  const yFg = useTransform(scrollYProgress, [0, 1], [0, 60]); // 전경 아래로
+
+  const yBg = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const yFg = useTransform(scrollYProgress, [0, 1], [0, 60]);
 
   return (
-    <section ref={ref} className="relative h-[100svh] overflow-clip" id="about">
+    <motion.section
+      ref={ref}
+      id="about"
+      className="relative h-[100svh] overflow-clip"
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ amount: 0.35, once: true }}
+    >
       <motion.div style={{ y: yBg }} className="absolute inset-0 -z-10 bg-neutral-50" />
-      <div className="sticky top-0 h-[90svh] flex justify-center flex-col">
-        <motion.h2 style={{ y: yFg }} className="text-4xl font-bold text-center relative bottom-32">
-          About Me
+      <div className="sticky top-0 h-[90svh] flex flex-col items-center justify-center px-6 md:px-10">
+        <motion.h2
+          variants={fadeUp}
+          style={{ y: yFg }}
+          className="mb-6 text-center text-4xl font-bold text-neutral-900 md:mb-10 md:text-5xl absolute top-10"
+        >
+          ABOUT ME
         </motion.h2>
-        <motion.p style={{ y: yFg }} className="text-3xl font-bold text-center w-5/6 ">
+
+        <motion.p
+          variants={fadeUp}
+          style={{ y: yFg }}
+          className="mb-10 text-center text-2xl font-semibold text-neutral-800 md:mb-12 md:text-4xl"
+        >
           안녕하세요, 저는 프론트엔드 개발자 김민석입니다.
         </motion.p>
-        <motion.div className="flex gap-10 justify-center items-center">
-          <motion.p style={{ y: yFg }} className="text-2xl font-bold w-1/3">
-            저는 사용자 경험을 중요시 하며 빠르게 발전하는 프론트엔드 기술을 습득하는 과정에서 큰
-            즐거움을 느낍니다 <br />
-            또한 꾸준한 성장을 위해 노력하며 팀 활동에서는 <br />
-            맡은 업무에 책임감을 갖고 구성원들과의 의사소통과 <br />
-            협력을 최우선으로 생각합니다.
-          </motion.p>
 
-          <div className="overflow-hidden rounded-full w-80 h-80">
-            <img src={profileImage} alt="이미지" />
+        <motion.div
+          variants={fadeUp}
+          className="flex w-full max-w-5xl items-center justify-center gap-8 md:gap-12"
+        >
+          <p className="w-full max-w-xl text-base leading-relaxed text-neutral-700 md:text-2xl">
+            저는 사용자 경험을 중요시 하며 빠르게 발전하는 프론트엔드 기술을 습득하는 과정에서 큰
+            즐거움을 느낍니다. 또한 꾸준한 성장을 위해 노력하며 팀 활동에서는 맡은 업무에 책임감을
+            갖고 기간 내 달성할 수 있으며 팀원들과의 의사소통과 협력을 최우선으로 생각합니다.
+          </p>
+
+          <div className="h-64 w-64 overflow-hidden rounded-full md:h-80 md:w-80">
+            <img
+              src={profileImage}
+              alt="김민석 프로필 사진"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
           </div>
         </motion.div>
-        <motion.p style={{ y: yFg }} className="text-2xl font-bold text-center">
-          GibHub:{' '}
-          <a
-            href="https://github.com/nas7062"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-amber-800"
-          >
-            nas7062@naver.com
-          </a>
-          <br /> Email: nas7062@naver.com <br />
-          P.H: 010-9314-7062 <br />
-          Velog:{' '}
-          <a
-            href="https://velog.io/@10012/posts"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-amber-800"
-          >
-            nas7062@naver.com
-          </a>
-        </motion.p>
       </div>
-    </section>
+    </motion.section>
   );
 }

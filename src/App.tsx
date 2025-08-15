@@ -5,7 +5,7 @@ import ScrollProgress from './components/ScrollProgress';
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative">
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-x-hidden">
       <ScrollProgress />
       <Header />
       <div className="z-10 w-full">
