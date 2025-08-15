@@ -12,38 +12,44 @@ const container = {
 // 왼쪽에서 등장
 const fromLeft = {
   hidden: { opacity: 0, x: -700 },
-  show: { opacity: 1, x: 0, transition: { duration: 2.1 } },
+  show: { opacity: 1, x: 0, transition: { duration: 1.5 } },
 };
 
 // 오른쪽에서 등장
 const fromRight = {
   hidden: { opacity: 0, x: 700 },
-  show: { opacity: 1, x: 0, transition: { duration: 2.1 } },
+  show: { opacity: 1, x: 0, transition: { duration: 1.5 } },
 };
 
 export default function Hero() {
   const navigate = useNavigate();
   return (
     <motion.section
-      className="min-h-[80svh] flex flex-col items-center justify-center text-center space-y-3"
+      className="min-h-[80svh] flex flex-col items-center justify-center text-center space-y-3 "
       variants={container}
       initial="hidden"
       animate="show"
     >
-      <motion.h2 className="text-8xl font-bold tracking-widest text-gray-700" variants={fromLeft}>
+      <motion.h2
+        className="text-8xl font-bold tracking-widest text-gray-700 relative right-48"
+        variants={fromLeft}
+      >
         FRONTEND DEVELOPER
       </motion.h2>
       <motion.h2
-        className="mt-4 text-8xl font-bold  tracking-widest text-gray-700"
+        className="mt-4 text-8xl font-bold  tracking-widest text-gray-700 relative left-72"
         variants={fromRight}
       >
         USER EXPERIENCE
       </motion.h2>
-      <motion.h2 className="text-8xl font-bold tracking-widest text-gray-700" variants={fromLeft}>
+      <motion.h2
+        className="text-8xl font-bold tracking-widest text-gray-700 relative right-[375px]"
+        variants={fromLeft}
+      >
         COMMUNICATION
       </motion.h2>
       <motion.h2
-        className="mt-4 text-8xl font-bold tracking-widest  text-gray-700"
+        className="mt-4 text-8xl font-bold tracking-widest  text-gray-700 relative left-[490px]"
         variants={fromRight}
       >
         CREATIVITY
