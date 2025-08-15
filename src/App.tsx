@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ParallaxSection from './components/ParallaxSection';
+import ProjectSection from './components/ProjectSection';
 import ScrollProgress from './components/ScrollProgress';
 
 function App() {
@@ -11,9 +12,7 @@ function App() {
       <div className="z-10 w-full">
         <Hero />
         <ParallaxSection />
-        <section id="project" className="min-h-screen scroll-mt-20">
-          PROJECT 섹션
-        </section>
+        <ProjectSection />
         <section id="contact" className="min-h-screen scroll-mt-20">
           CONTACT 섹션
         </section>
