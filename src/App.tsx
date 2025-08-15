@@ -1,7 +1,17 @@
+import Hero from './components/Hero';
+import ParallaxSection from './components/ParallaxSection';
+import ScrollProgress from './components/ScrollProgress';
+
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <h1 className="text-4xl font-bold underline">Tailwind v4 + React 19 + pnpm OK</h1>
+    <div className="min-h-screen flex flex-col items-center justify-center relative">
+      <ScrollProgress />
+      <div className="z-10 w-full">
+        <Hero />
+        <ParallaxSection />
+        <ParallaxSection />
+        <ParallaxSection />
+      </div>
     </div>
   );
 }
