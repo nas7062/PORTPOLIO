@@ -41,7 +41,7 @@ export default function ParallaxSection() {
         <motion.h2
           variants={fadeUp}
           style={{ y: yFg }}
-          className="mb-6 text-center text-4xl font-bold text-neutral-900 md:mb-10 md:text-5xl absolute top-10"
+          className="mb-6 text-center text-4xl font-bold text-neutral-900 md:mb-10 md:text-5xl absolute top-20"
         >
           ABOUT ME
         </motion.h2>
