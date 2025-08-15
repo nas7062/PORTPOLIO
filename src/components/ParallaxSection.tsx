@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import profileImage from '../assets/profile.jpg';
-import { Link } from 'react-router-dom';
 export default function ParallaxSection() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
@@ -9,7 +8,7 @@ export default function ParallaxSection() {
   const yFg = useTransform(scrollYProgress, [0, 1], [0, 60]); // 전경 아래로
 
   return (
-    <section ref={ref} className="relative h-[100svh] overflow-clip">
+    <section ref={ref} className="relative h-[100svh] overflow-clip" id="about">
       <motion.div style={{ y: yBg }} className="absolute inset-0 -z-10 bg-neutral-50" />
       <div className="sticky top-0 h-[90svh] flex justify-center flex-col">
         <motion.h2 style={{ y: yFg }} className="text-4xl font-bold text-center relative bottom-32">

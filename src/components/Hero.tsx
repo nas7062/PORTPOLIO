@@ -1,6 +1,4 @@
-// components/Hero.tsx
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -22,13 +20,13 @@ const fromRight = {
 };
 
 export default function Hero() {
-  const navigate = useNavigate();
   return (
     <motion.section
       className="min-h-[80svh] flex flex-col items-center justify-center text-center space-y-3 "
       variants={container}
       initial="hidden"
       animate="show"
+      id="home"
     >
       <motion.h2
         className="text-8xl font-bold tracking-widest text-gray-700 relative right-48"
@@ -54,14 +52,6 @@ export default function Hero() {
       >
         CREATIVITY
       </motion.h2>
-      <motion.div className="mt-8" variants={container}>
-        <button
-          className="px-6 py-3 rounded-xl bg-black text-white cursor-pointer"
-          onClick={() => navigate('/work')}
-        >
-          View Work
-        </button>
-      </motion.div>
     </motion.section>
   );
 }
