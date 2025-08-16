@@ -33,7 +33,7 @@ AI챗봇과 요금제 조회·비교·리뷰 기능을 통해 합리적인 선�
     stack: ['React', 'Tailwind', 'TANSTACK QUERY', 'TypeScript'],
     image: P3,
     github: 'https://github.com/nas7062/URECA-5CEAN',
-    demo: 'https://todo.example.com',
+    demo: 'https://jijonnghae.site/',
   },
 ];
 
