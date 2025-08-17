@@ -1,3 +1,4 @@
+import ContactSection from './components/ContactSection';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ParallaxSection from './components/ParallaxSection';
@@ -13,9 +14,7 @@ function App() {
         <Hero />
         <ParallaxSection />
         <ProjectSection />
-        <section id="contact" className="min-h-screen scroll-mt-20">
-          CONTACT 섹션
-        </section>
+        <ContactSection />
       </div>
     </div>
   );
