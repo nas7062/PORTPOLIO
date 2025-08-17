@@ -39,9 +39,9 @@ AI챗봇과 요금제 조회·비교·리뷰 기능을 통해 합리적인 선�
 
 export default function ProjectSection() {
   return (
-    <div id="project" className="min-h-screen scroll-mt-20">
+    <div id="project" className="min-h-screen scroll-mt-20  mx-auto px-60">
       <h2 className="text-center text-5xl mb-10">PROJECT</h2>
-      <div className=" grid grid-cols-2 justify-items-center gap-x-16 space-y-4">
+      <div className=" grid grid-cols-2 justify-items-center gap-x-8 space-y-4">
         {projects.map((project) => (
           <div
             key={project.id}

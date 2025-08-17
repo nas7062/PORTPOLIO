@@ -55,12 +55,13 @@ export default function ContactSection() {
         transition={{ duration: 0.5 }}
         className="max-w-5xl mx-auto"
       >
-        <header className="text-center mb-12">
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">CONTACT</h2>
-          <p className="mt-3 text-slate-600">협업, 제안, 어떤 이야기든 편하게 연락 주세요.</p>
-        </header>
+          <p className="mt-3 text-lg text-slate-600">
+            봐주셔서 감사합니다. 어떤 이야기든 편하게 연락 주세요!
+          </p>
+        </div>
 
-        {/* Contact Cards */}
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           <motion.div
             whileHover={{ y: -4 }}
