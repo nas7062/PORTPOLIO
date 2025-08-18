@@ -27,7 +27,7 @@ export default function Header() {
           alt="로고"
           width={50}
           height={50}
-          className="rounded-full absolute left-16 cursor-pointer"
+          className="rounded-full absolute md:left-16 cursor-pointer hidden md:block"
           onClick={() => scrollToId('home')}
         />
         {/* 오른쪽: 링크(데스크톱) */}
