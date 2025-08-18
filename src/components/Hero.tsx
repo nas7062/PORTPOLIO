@@ -15,7 +15,7 @@ const fromLeft = {
   show: { opacity: 1, x: 0, transition: { duration: 1.2 } },
 };
 
-// 오른쪽에서 등장 → 중앙으로(요소의 원래 위치: Tailwind relative left/right 유지)
+// 오른쪽에서 등장 → 중앙으로
 const fromRight = {
   hidden: { opacity: 0, x: 700 },
   show: { opacity: 1, x: 0, transition: { duration: 1.2 } },
@@ -36,7 +36,6 @@ function Title({
 
   useEffect(() => {
     if (inView) controls.start('show');
-    else controls.start('hidden');
   }, [inView, controls]);
 
   const variants = direction === 'left' ? fromLeft : fromRight;
@@ -65,14 +64,14 @@ export default function Hero() {
     >
       <Title
         direction="left"
-        className="text-8xl font-bold tracking-widest text-gray-700 relative right-48"
+        className="  sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl xl:right-48 md:right-20  text-3xl font-bold tracking-widest text-gray-700 relative "
       >
         FRONTEND DEVELOPER
       </Title>
 
       <Title
         direction="right"
-        className="mt-4 text-8xl font-bold tracking-widest text-gray-700 relative left-72"
+        className="mt-4 sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl xl:left-72 md:left-20  text-3xl font-bold tracking-widest text-gray-700 relative "
       >
         USER EXPERIENCE
       </Title>
@@ -80,14 +79,14 @@ export default function Hero() {
       {/* Tailwind에는 right-90 유틸리티가 없습니다 → px 단위로 보정 */}
       <Title
         direction="left"
-        className="text-8xl font-bold tracking-widest text-gray-700 relative right-[375px]"
+        className="sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl  md:right-20  text-3xl font-bold tracking-widest text-gray-700 relative xl:right-[375px]"
       >
         COMMUNICATION
       </Title>
 
       <Title
         direction="right"
-        className="mt-4 text-8xl font-bold tracking-widest text-gray-700 relative left-[490px]"
+        className="mt-4 sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl xl:left-[490px] md:left-20  text-3xl font-bold tracking-widest text-gray-700 relative"
       >
         CREATIVITY
       </Title>

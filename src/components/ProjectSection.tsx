@@ -59,8 +59,11 @@ export default function ProjectSection() {
               <p className="text-2xl ">{project.title}</p>
               <p className="px-2 text-gray-600">{project.description}</p>
               <div className="py-2 ">
-                {project.stack?.map((st) => (
-                  <span className="ml-1 text-xs border text-white bg-sky-400 border-sky-400 rounded-lg px-2 py-1 ">
+                {project.stack?.map((st, idx) => (
+                  <span
+                    key={idx}
+                    className="ml-1 text-xs border text-white bg-sky-400 border-sky-400 rounded-lg px-2 py-1 "
+                  >
                     {st}
                   </span>
                 ))}

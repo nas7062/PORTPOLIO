@@ -10,7 +10,7 @@ function App() {
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-x-hidden">
       <ScrollProgress />
       <Header />
-      <div className="z-10 w-full">
+      <div className="z-10 w-full overflow-y-hidden">
         <Hero />
         <ParallaxSection />
         <ProjectSection />
