@@ -6,7 +6,6 @@ const CONTACT = {
   email: 'nas7062@naver.com',
   github: 'https://github.com/nas7062',
   linkedin: 'https://www.linkedin.com/in/%EB%AF%BC%EC%84%9D-%EA%B9%80-b9776b37a/',
-  resumeUrl: '/resume.pdf',
   location: 'Incheon Seogu, South Korea',
 };
 
@@ -175,14 +174,7 @@ export default function ContactSection() {
         >
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-xl font-semibold">메시지 보내기</h3>
-            <a
-              href={CONTACT.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-sm hover:bg-slate-100"
-            >
-              <Download className="size-4" /> 이력서 열기
-            </a>
+            
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
