@@ -29,8 +29,8 @@ export default function ParallaxSection() {
   return (
     <motion.section
       ref={ref}
-      id="about" // 헤더 클릭 시 about으로 가게 
-      className="relative h-[100svh] overflow-clip"
+      id="about" // 헤더 클릭 시 about으로 가게끔
+      className="relative h-[100svh] overflow-clip snap-start mt-20 "
       variants={container}
       initial="hidden"
       whileInView="show"

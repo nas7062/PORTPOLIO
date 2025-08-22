@@ -70,7 +70,7 @@ function Title({
 export default function Hero() {
   return (
     <motion.section
-      className="min-h-[80svh] flex flex-col items-center justify-center text-center space-y-3 overflow-x-hidden"
+      className=" min-h-[100svh] snap-start h-screen flex flex-col items-center justify-center text-center space-y-3 overflow-x-hidden"
       variants={container}
       initial="hidden"
       animate="show"

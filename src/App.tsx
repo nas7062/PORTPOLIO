@@ -7,10 +7,10 @@ import ScrollProgress from './components/ScrollProgress';
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-x-hidden">
+    <div className="min-h-screen flex flex-col  items-center justify-center relative overflow-x-hidden">
       <ScrollProgress />
       <Header />
-      <div className="z-10 w-full overflow-y-hidden">
+      <div className="z-10 w-full overflow-y-hidden  snap-y snap-mandatory ">
         <Hero />
         <ParallaxSection />
         <ProjectSection />
@@ -19,5 +19,5 @@ function App() {
     </div>
   );
 }
-
+  
 export default App;

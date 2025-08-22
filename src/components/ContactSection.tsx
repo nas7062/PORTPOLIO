@@ -49,7 +49,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="min-h-screen scroll-mt-20 px-6 md:px-10 lg:px-16 py-16 bg-gradient-to-b from-white to-slate-50"
+      className=" min-h-screen scroll-mt-20 px-6 md:px-10 lg:px-16 py-16 bg-gradient-to-b from-white to-slate-50"
     >
       <motion.div
         initial={{ opacity: 0, y: 200 }}
