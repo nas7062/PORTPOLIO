@@ -39,13 +39,13 @@ AI챗봇과 요금제 조회·비교·리뷰 기능을 통해 합리적인 선�
 
 export default function ProjectSection() {
   return (
-    <div id="project" className="min-h-screen scroll-mt-20  mx-auto px-60">
+    <div id="project" className="min-h-screen scroll-mt-20  mx-auto  2xl:px-60">
       <h2 className="text-center text-5xl mb-10">PROJECT</h2>
-      <div className=" grid grid-cols-2 justify-items-center gap-x-8 space-y-4">
+      <div className=" grid grid-cols-1 lg:max-w-full max-w-[800px]  px-4 mx-auto lg:grid-cols-2  justify-items-center gap-x-4 space-y-4">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="flex h-72  w-[660px] text-center  border border-gray-200   shadow-md hover:shadow-xl  hover:-translate-y-2 transform transition-all duration-300 rounded-xl overflow-hidden"
+            className="flex h-80  w-full text-center   border border-gray-200   shadow-md hover:shadow-xl  hover:-translate-y-2 transform transition-all duration-300 rounded-xl overflow-hidden"
           >
             <img
               src={project.image}
@@ -58,7 +58,7 @@ export default function ProjectSection() {
             <div className="flex flex-col flex-1 p-4 ">
               <p className="text-2xl ">{project.title}</p>
               <p className="px-2 text-gray-600">{project.description}</p>
-              <div className="py-2 ">
+              <div className="py-1 flex flex-wrap gap-1 mt-2 ">
                 {project.stack?.map((st, idx) => (
                   <span
                     key={idx}
