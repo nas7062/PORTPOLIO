@@ -11,7 +11,7 @@ const CONTACT = {
 };
 
 export default function ContactSection() {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false); // 이메일 주소 복사 state 
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState({ name: '', email: '', message: '' });
 
@@ -27,7 +27,7 @@ export default function ContactSection() {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(CONTACT.email);
+      await navigator.clipboard.writeText(CONTACT.email); //클릭보드 api 사용해 복사 
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (e) {
@@ -38,8 +38,11 @@ export default function ContactSection() {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
+    // 메일 제목
     const subject = encodeURIComponent(`[Portfolio] ${form.name}님의 문의`);
+    // 메일 내용
     const body = encodeURIComponent(`From: ${form.name} <${form.email}>\n\n${form.message}`);
+      // 사용자의 메일 클라이언트를 열도록 mailto 링크 생성
     window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`;
   };
 
