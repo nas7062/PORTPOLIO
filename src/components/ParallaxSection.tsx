@@ -8,7 +8,7 @@ const container: Variants = {
     opacity: 1,
     transition: { staggerChildren: 0.08, when: 'beforeChildren' },
   },
-};
+}; // FadeIN 애니메이션 
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -17,7 +17,7 @@ const fadeUp: Variants = {
     y: 0,
     transition: { duration: 0.5, ease: 'easeOut' },
   },
-};
+}; // 올라오게끔 하는 애니메이션
 
 export default function ParallaxSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -29,7 +29,7 @@ export default function ParallaxSection() {
   return (
     <motion.section
       ref={ref}
-      id="about"
+      id="about" // 헤더 클릭 시 about으로 가게 
       className="relative h-[100svh] overflow-clip"
       variants={container}
       initial="hidden"
