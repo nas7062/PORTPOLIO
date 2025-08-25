@@ -10,7 +10,7 @@ const CONTACT = {
 };
 
 export default function ContactSection() {
-  const [copied, setCopied] = useState(false); // 이메일 주소 복사 state 
+  const [copied, setCopied] = useState(false); // 이메일 주소 복사 state
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState({ name: '', email: '', message: '' });
 
@@ -26,7 +26,7 @@ export default function ContactSection() {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(CONTACT.email); //클릭보드 api 사용해 복사 
+      await navigator.clipboard.writeText(CONTACT.email); //클릭보드 api 사용해 복사
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (e) {
@@ -41,7 +41,7 @@ export default function ContactSection() {
     const subject = encodeURIComponent(`[Portfolio] ${form.name}님의 문의`);
     // 메일 내용
     const body = encodeURIComponent(`From: ${form.name} <${form.email}>\n\n${form.message}`);
-      // 사용자의 메일 클라이언트를 열도록 mailto 링크 생성
+    // 사용자의 메일 클라이언트를 열도록 mailto 링크 생성
     window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`;
   };
 
@@ -67,7 +67,7 @@ export default function ContactSection() {
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           <motion.div
             whileHover={{ y: -4 }}
-            className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+            className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm "
           >
             <div className="flex items-start gap-4">
               <div className="rounded-xl border p-3 bg-slate-50">
@@ -174,7 +174,6 @@ export default function ContactSection() {
         >
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-xl font-semibold">메시지 보내기</h3>
-            
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
