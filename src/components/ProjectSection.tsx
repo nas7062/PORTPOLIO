@@ -47,7 +47,7 @@ export default function ProjectSection() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="flex h-80  w-full text-center   border border-gray-200   shadow-md hover:shadow-xl  hover:-translate-y-2 transform transition-all duration-300 rounded-xl overflow-hidden"
+            className="flex h-80  w-full text-center  items-center  border border-gray-200   shadow-md hover:shadow-xl  hover:-translate-y-2 transform transition-all duration-300 rounded-xl overflow-hidden"
           >
             <div className="flex flex-col justify-center">
               <img
@@ -75,7 +75,7 @@ export default function ProjectSection() {
                 ))}
               </div>
 
-              <div className="flex sm:justify-center gap-1 sm:gap-10 mt-auto flex-col sm:flex-row  ">
+              <div className="flex sm:justify-center gap-1 sm:gap-10 mt-auto flex-col sm:flex-row    ">
                 <a
                   href={project.github}
                   target="_blank"
