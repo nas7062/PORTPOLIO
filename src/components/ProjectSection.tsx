@@ -37,6 +37,16 @@ AI챗봇과 요금제 조회·비교·리뷰 기능을 통해 합리적인 선�
     github: 'https://github.com/nas7062/URECA-5CEAN',
     demo: 'https://jijonnghae.site/',
   },
+  {
+    id: 4,
+    title: '10012',
+    description: `10012는 개인 프로젝트로.기획부터 설계 디자인 개발까지 혼자 진행하는 쇼핑몰 프로젝트입니다.`,
+    stack: ['React', 'Tailwind', 'TANSTACK QUERY', 'TypeScript'],
+    image: '',
+    group: '개인 프로젝트(미완성 진행중)',
+    github: 'https://github.com/nas7062/s-shop',
+    demo: '',
+  },
 ];
 
 export default function ProjectSection() {
