@@ -1,7 +1,7 @@
 import P1 from '../assets/p1.jpg';
 import P2 from '../assets/p2.jpg';
 import P3 from '../assets/p3.jpg';
-import ConfirmModal from './Modal/ConfirmModal';
+import ProjectDetailModal from './Modal/ProjectDetailModal';
 import { useModal } from './Modal/useModal';
 export const projects = [
   {
@@ -53,24 +53,29 @@ AI챗봇과 요금제 조회·비교·리뷰 기능을 통해 합리적인 선�
 
 export default function ProjectSection() {
   const modal = useModal();
-  const handleDangerAction = async () => {
+
+  const openDetail = async (project) => {
     try {
-      const ok = await modal.push('confirm-delete', ConfirmModal, {
-        title: '삭제 확인',
-        message: '정말 삭제하시겠습니까?',
-      });
-      if (ok) {
-        console.log('삭제 진행');
+      const action = await modal.push<'close' | 'go-demo' | 'go-github'>(
+        `proj-detail-${project.id}`,
+        ProjectDetailModal,
+        { project }
+      );
+
+      if (action === 'go-demo' && project.demo) {
+        window.open(project.demo, '_blank', 'noopener,noreferrer');
+      } else if (action === 'go-github' && project.github) {
+        window.open(project.github, '_blank', 'noopener,noreferrer');
       }
-    } catch (e) {
-      console.log('사용자가 취소했습니다.', e);
+      // 'close'는 아무것도 안 해도 됩니다.
+    } catch {
+      // reject된 경우(배경 클릭 등) 무시 가능
     }
   };
 
   return (
     <div id="project" className="min-h-screen mt-60  mx-auto  2xl:px-60 snap-start">
       <h2 className="text-center text-5xl mb-10">PROJECT</h2>
-      <button onClick={handleDangerAction}>중요 작업 실행</button>
       <div className=" grid grid-cols-1 lg:max-w-full max-w-[800px]  px-4 mx-auto lg:grid-cols-2  justify-items-center gap-x-4 space-y-4">
         {projects.map((project) => (
           <div
@@ -104,6 +109,13 @@ export default function ProjectSection() {
               </div>
 
               <div className="flex sm:justify-center gap-1 sm:gap-10 mt-auto flex-col sm:flex-row    ">
+                <button
+                  onClick={() => openDetail(project)}
+                  className="border border-gray-300 rounded-lg text-xs sm:text-base text-white px-2 py-1 bg-gray-800 hover:bg-gray-300 hover:text-gray-800"
+                >
+                  상세 보기
+                </button>
+
                 <a
                   href={project.github}
                   target="_blank"
