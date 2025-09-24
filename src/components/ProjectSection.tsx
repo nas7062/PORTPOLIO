@@ -12,8 +12,49 @@ export const projects = [
     stack: ['React', 'CSS Module', 'TANSTACK QUERY'],
     image: P1,
     group: '프론트엔드 4명',
+    date: '2025.05.07 ~ 2025.05.20 (2주)',
     github: 'https://github.com/nas7062/road-pick-fe',
     demo: 'https://roadpick.vercel.app/',
+    detail: {
+      title: '담당 역할 & 기여도',
+      sections: [
+        {
+          name: '공공 API 조사 및 문서화',
+          bullets: [
+            '관련 Open API를 분석하여 사용 가능 여부 검토',
+            'API 엔드포인트, 파라미터, 응답 구조를 문서화',
+          ],
+        },
+        {
+          name: '디테일 페이지 구현',
+          bullets: [
+            '여행지별 상세 정보를 표시하는 페이지 개발',
+            'React 기반 컴포넌트 분리 및 재사용성 고려',
+            '사용자 친화적인 UI/UX 설계 반영',
+          ],
+        },
+        {
+          name: '캘린더 페이지 구현',
+          bullets: [
+            '여행 계획을 직관적으로 구성할 수 있는 캘린더 기능 개발',
+            '일정 추가, 삭제, 수정 기능 구현',
+            '일정별 여행지 상세 페이지와 연동',
+          ],
+        },
+        {
+          name: '여행 계획(경로) 페이지 구현',
+          bullets: [
+            '사용자가 선택한 장소들을 카카오맵 Polyline(선)으로 연결해 시각적 동선 표시',
+            '장소 추가 및 삭제 기능 구현 → 변경 시 즉시 반영',
+            '날짜별 여행 경로 저장 기능 → 일정별 최적화된 이동 동선 관리 가능',
+          ],
+        },
+        {
+          name: '백엔드',
+          bullets: ['Node.js(Express) 활용하여 여행 계획 CRUD API 직접 구현'],
+        },
+      ],
+    },
   },
   {
     id: 2,
@@ -111,11 +152,10 @@ export default function ProjectSection() {
               <div className="flex sm:justify-center gap-1 sm:gap-10 mt-auto flex-col sm:flex-row    ">
                 <button
                   onClick={() => openDetail(project)}
-                  className="border border-gray-300 rounded-lg text-xs sm:text-base text-white px-2 py-1 bg-gray-800 hover:bg-gray-300 hover:text-gray-800"
+                  className="cursor-pointer border border-gray-300 rounded-lg text-xs sm:text-base text-white px-2 py-1 bg-gray-800 hover:bg-gray-300 hover:text-gray-800"
                 >
                   상세 보기
                 </button>
-
                 <a
                   href={project.github}
                   target="_blank"
@@ -123,14 +163,6 @@ export default function ProjectSection() {
                   className="border border-gray-300 rounded-lg text-xs sm:text-base text-white px-2 py-1 bg-gray-800 hover:bg-gray-300 cursor-pointer hover:text-gray-800"
                 >
                   Github
-                </a>
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border border-gray-300 rounded-lg text-xs sm:text-base text-white px-2 py-1 bg-gray-800 hover:bg-gray-300 cursor-pointer hover:text-gray-800"
-                >
-                  View Site
                 </a>
               </div>
             </div>

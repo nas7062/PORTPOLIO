@@ -1,4 +1,5 @@
 // Modal/ProjectDetailModal.tsx
+import { div } from 'framer-motion/client';
 import React from 'react';
 
 type Project = {
@@ -9,7 +10,15 @@ type Project = {
   image?: string;
   github?: string;
   demo?: string;
+  date?: string;
   group?: string;
+  detail: {
+    title: string;
+    sections: {
+      name: string;
+      bullets: string[];
+    };
+  };
 };
 
 export default function ProjectDetailModal({
@@ -22,9 +31,9 @@ export default function ProjectDetailModal({
   reject: (reason?: any) => void;
 }) {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
-      <div className="rounded-2xl bg-white p-6 shadow-xl w-[min(640px,92vw)]">
-        <div className="flex gap-4">
+    <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50 ">
+      <div className="rounded-2xl bg-white p-10 shadow-xl w-[min(800px,92vw)] ">
+        <div className="flex gap-4 ">
           {project.image ? (
             <img
               src={project.image}
@@ -36,8 +45,9 @@ export default function ProjectDetailModal({
           <div className="flex-1">
             <h2 className="text-xl font-semibold">{project.title}</h2>
             {project.group && (
-              <p className="text-sm text-slate-500 mt-1">팀 구성: {project.group}</p>
+              <p className="text-sm text-gray-600 mt-1">팀 구성: {project.group}</p>
             )}
+            <p className="text-sm text-gray-600 mt-1">{project.date}</p>
             <p className="text-slate-700 mt-3 whitespace-pre-line">{project.description}</p>
 
             <div className="mt-3 flex flex-wrap gap-1">
@@ -48,6 +58,21 @@ export default function ProjectDetailModal({
                 >
                   {st}
                 </span>
+              ))}
+            </div>
+            <div>
+              <p className="text-lg font-semibold mt-4">{project.detail?.title}</p>
+              {project.detail?.sections?.map((section) => (
+                <div key={section.name} className="mt-3">
+                  <p className="font-medium ">{section.name}</p>
+                  <ul className="list-disc pl-5 mt-1 space-y-1">
+                    {section.bullets.map((bullet: string, i: number) => (
+                      <li key={i} className="text-sm">
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
           </div>
