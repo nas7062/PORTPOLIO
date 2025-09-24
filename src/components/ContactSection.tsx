@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Download, MapPin, Copy, Check, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, Download, MapPin, Copy, Check, Send, Pencil } from 'lucide-react';
 
 const CONTACT = {
   email: 'nas7062@naver.com',
   github: 'https://github.com/nas7062',
   linkedin: 'https://www.linkedin.com/in/%EB%AF%BC%EC%84%9D-%EA%B9%80-b9776b37a/',
   location: 'Incheon Seogu, South Korea',
+  velog: 'https://velog.io/@10012/posts',
 };
 
 export default function ContactSection() {
@@ -157,6 +158,27 @@ export default function ContactSection() {
                   className="text-slate-700   underline underline-offset-4  decoration-slate-300 hover:decoration-slate-800"
                 >
                   LinkedIn Profile
+                </a>
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            whileHover={{ y: -4 }}
+            className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+          >
+            <div className="flex items-start gap-4">
+              <div className="rounded-xl border p-3 bg-slate-50">
+                <Pencil className="size-6" />
+              </div>
+              <div className="flex-1 ">
+                <h3 className="font-semibold text-lg">Velog</h3>
+                <a
+                  href={CONTACT.velog}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-700   underline underline-offset-4  decoration-slate-300 hover:decoration-slate-800"
+                >
+                  https://velog.io/@10012/posts
                 </a>
               </div>
             </div>
