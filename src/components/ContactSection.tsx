@@ -45,7 +45,8 @@ export default function ContactSection() {
     // 사용자의 메일 클라이언트를 열도록 mailto 링크 생성
     window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`;
   };
-
+  const RESUME_URL = '/resume/김민석-이력서.pdf';
+  const PORT_URL = '/portfolio/김민석-포트폴리오.pdf';
   return (
     <section
       id="contact"
@@ -180,6 +181,41 @@ export default function ContactSection() {
                 >
                   https://velog.io/@10012/posts
                 </a>
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            whileHover={{ y: -4 }}
+            className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+          >
+            <div className="flex items-start gap-4">
+              <div className="rounded-xl border p-3 bg-slate-50">
+                <Download className="size-6" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-semibold text-lg">이력서 / 포트폴리오</h3>
+                <p className="text-slate-600">PDF 파일을 바로 다운로드.</p>
+
+                <div className="mt-3 flex gap-2">
+                  <a
+                    href={RESUME_URL}
+                    download="Resume_KimMinseok_2025.pdf" // 저장될 기본 파일명
+                    className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-sm bg-slate-900 text-white hover:bg-slate-800"
+                  >
+                    <Download className="size-4" />
+                    이력서
+                  </a>
+
+                  {/* 포트폴리오도 따로 두고 싶다면 하나 더 */}
+                  <a
+                    href={PORT_URL}
+                    download="Portfolio_KimMinseok_2025.pdf"
+                    className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-sm hover:bg-slate-100"
+                  >
+                    <Download className="size-4" />
+                    포트폴리오
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
