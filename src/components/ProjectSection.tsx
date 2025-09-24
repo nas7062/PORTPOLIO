@@ -24,7 +24,7 @@ export default function ProjectSection() {
   };
 
   return (
-    <div id="project" className="min-h-screen mt-60  mx-auto  2xl:px-60 snap-start">
+    <div id="project" className="min-h-screen mx-auto  2xl:px-60 snap-start">
       <h2 className="text-center text-5xl mb-10">PROJECT</h2>
       <div className=" grid grid-cols-1 lg:max-w-full max-w-[800px]  px-4 mx-auto lg:grid-cols-2  justify-items-center gap-x-4 space-y-4">
         {projects.map((project) => (

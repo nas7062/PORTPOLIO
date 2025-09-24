@@ -122,15 +122,14 @@ export default function ProjectDetailModal({
               <h2 id="project-modal-title" className="text-xl font-semibold">
                 {project.title}
               </h2>
-
               {project.group && (
                 <p className="text-sm text-gray-600 mt-1">팀 구성: {project.group}</p>
               )}
 
-              {project.date && <p className="text-sm text-gray-600 mt-1">{project.date}</p>}
-
+              {project.date && (
+                <p className="text-sm text-gray-600 mt-1"> 프로젝트 기간 : {project.date}</p>
+              )}
               <p className="text-slate-700 mt-3 whitespace-pre-line">{project.description}</p>
-
               <div className="mt-3 flex flex-wrap gap-1">
                 {project.stack?.map((st, idx) => (
                   <span
@@ -141,7 +140,6 @@ export default function ProjectDetailModal({
                   </span>
                 ))}
               </div>
-
               <div className="mt-4">
                 <p className="text-lg font-semibold">{project.detail?.title}</p>
 
@@ -165,20 +163,26 @@ export default function ProjectDetailModal({
         {/* 하단 버튼: 줄어들지 않게 고정 */}
         <div className="border-t p-4 md:p-5 flex justify-end gap-2 shrink-0">
           {project.github && (
-            <button onClick={() => resolve('go-github')} className="px-3 py-1.5 border rounded">
+            <button
+              onClick={() => resolve('go-github')}
+              className="px-3 py-1.5 border rounded cursor-pointer"
+            >
               GitHub
             </button>
           )}
 
           {project.demo && (
-            <button onClick={() => resolve('go-demo')} className="px-3 py-1.5 border rounded">
-              데모 보기
+            <button
+              onClick={() => resolve('go-demo')}
+              className="px-3 py-1.5 border rounded  cursor-pointer"
+            >
+              View Site
             </button>
           )}
 
           <button
             onClick={() => resolve('close')}
-            className="px-3 py-1.5 bg-black text-white rounded"
+            className="px-3 py-1.5 bg-black text-white rounded  cursor-pointer"
           >
             닫기
           </button>
