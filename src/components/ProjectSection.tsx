@@ -33,14 +33,23 @@ export default function ProjectSection() {
             className="flex h-80  w-full text-center  items-center  border border-gray-200   shadow-md hover:shadow-xl  hover:-translate-y-2 transform transition-all duration-300 rounded-xl overflow-hidden"
           >
             <div className="flex flex-col justify-center">
-              <img
-                src={project.image}
-                alt="프로젝트 이미지"
-                width={280}
-                height={280}
-                loading="lazy"
-                className="rounded-xl w-40 h-40 sm:w-60 sm:h-64 self-center ml-2"
-              />
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt="프로젝트 이미지"
+                  width={280}
+                  height={280}
+                  loading="lazy"
+                  className="rounded-xl w-40 h-40 sm:w-60 sm:h-64 self-center ml-2 object-cover"
+                />
+              ) : (
+                <div
+                  className="w-40 h-40 sm:w-60 sm:h-64 self-center ml-2 rounded-xl bg-slate-100
+                  flex items-center justify-center text-slate-400"
+                >
+                  No Image
+                </div>
+              )}
               <div className="text-xs sm:text-base mt-4">팀원:{project.group}</div>
             </div>
 
