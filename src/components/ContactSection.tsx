@@ -1,6 +1,17 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Download, MapPin, Copy, Check, Send, Pencil } from 'lucide-react';
+import {
+  Mail,
+  Github,
+  Linkedin,
+  Download,
+  MapPin,
+  Copy,
+  Check,
+  Send,
+  Pencil,
+  Phone,
+} from 'lucide-react';
 
 const CONTACT = {
   email: 'nas7062@naver.com',
@@ -8,6 +19,7 @@ const CONTACT = {
   linkedin: 'https://www.linkedin.com/in/%EB%AF%BC%EC%84%9D-%EA%B9%80-b9776b37a/',
   location: 'Incheon Seogu, South Korea',
   velog: 'https://velog.io/@10012/posts',
+  Phone: '010-9314-7062',
 };
 
 export default function ContactSection() {
@@ -202,19 +214,11 @@ export default function ContactSection() {
           >
             <div className="flex items-start gap-4">
               <div className="rounded-xl border p-3 bg-slate-50">
-                <MapPin className="size-6" />
+                <Phone className="size-6" />
               </div>
               <div className="flex-1">
-                <h3 className="font-semibold text-lg">위치</h3>
-                <p className="text-slate-600">{CONTACT.location}</p>
-                <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONTACT.location)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-sm hover:bg-slate-100"
-                >
-                  지도에서 보기
-                </a>
+                <h3 className="font-semibold text-lg">휴대폰 번호</h3>
+                <p className="text-slate-600">{CONTACT.Phone}</p>
               </div>
             </div>
           </motion.div>
