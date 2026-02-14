@@ -8,7 +8,7 @@ const container: Variants = {
     opacity: 1,
     transition: { staggerChildren: 0.08, when: 'beforeChildren' },
   },
-}; // FadeIN 애니메이션 
+}; // FadeIN 애니메이션
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -30,14 +30,14 @@ export default function ParallaxSection() {
     <motion.section
       ref={ref}
       id="about" // 헤더 클릭 시 about으로 가게끔
-      className="relative h-[100svh] overflow-clip snap-start mt-20 "
+      className="relative h-svh overflow-clip snap-start mt-20 "
       variants={container}
       initial="hidden"
       whileInView="show"
       viewport={{ amount: 0.35, once: true }}
     >
       <motion.div style={{ y: yBg }} className="absolute inset-0 -z-10 bg-neutral-50" />
-      <div className="sticky top-0 h-[90svh] flex flex-col items-center justify-center px-6 md:px-10">
+      <div className="sticky top-0 h-[105svh] flex flex-col items-center justify-center px-6 md:px-10">
         <motion.h2
           variants={fadeUp}
           style={{ y: yFg }}

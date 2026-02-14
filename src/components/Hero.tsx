@@ -70,7 +70,7 @@ function Title({
 export default function Hero() {
   return (
     <motion.section
-      className=" min-h-[100svh] snap-start h-screen flex flex-col items-center justify-center text-center space-y-3 overflow-x-hidden"
+      className=" min-h-svh snap-start h-screen flex flex-col items-center justify-center text-center space-y-3 overflow-x-hidden"
       variants={container}
       initial="hidden"
       animate="show"
@@ -85,21 +85,21 @@ export default function Hero() {
 
       <Title
         direction="right"
-        className="mt-4 sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl xl:left-[18%] md:left-[25%] text-3xl font-bold tracking-widest text-gray-700 relative"
+        className="mt-4 sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl xl:left-[13%] md:left-[25%] text-3xl font-bold tracking-widest text-gray-700 relative"
       >
         USER EXPERIENCE
       </Title>
 
       <Title
         direction="left"
-        className="sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl xl:right-[25%] md:right-[37%] text-3xl font-bold tracking-widest text-gray-700 relative "
+        className="sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl xl:right-[15%] md:right-[37%] text-3xl font-bold tracking-widest text-gray-700 relative "
       >
         COMMUNICATION
       </Title>
 
       <Title
         direction="right"
-        className="mt-4 sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl xl:left-[58%] md:left-[68%] text-3xl font-bold tracking-widest text-gray-700 relative"
+        className="mt-4 sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl xl:left-[45%] md:left-[68%] text-3xl font-bold tracking-widest text-gray-700 relative"
       >
         CREATIVITY
       </Title>
