@@ -50,14 +50,23 @@ export default function ContactSection() {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    // 메일 제목
-    const subject = encodeURIComponent(`[Portfolio] ${form.name}님의 문의`);
-    // 메일 내용
-    const body = encodeURIComponent(`From: ${form.name} <${form.email}>\n\n${form.message}`);
-    // 사용자의 메일 클라이언트를 열도록 mailto 링크 생성
-    window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`;
+
+    const subject = `[Portfolio] ${form.name}님의 문의`;
+    const body = `From: ${form.name} <${form.email}>\n\n${form.message}`;
+
+    const mailto = `mailto:${CONTACT.email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
   };
-  const RESUME_URL = '/resume/김민석-이력서.pdf';
+
+  const gmailComposeUrl = (to: string, subject: string, body: string) =>
+    `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+  const RESUME_URL = '/resume/김민석_이력서.pdf';
   const PORT_URL = '/portfolio/김민석-포트폴리오.pdf';
   return (
     <section
@@ -91,12 +100,6 @@ export default function ContactSection() {
                 <h3 className="font-semibold text-lg">이메일</h3>
                 <p className="text-slate-600 break-all">{CONTACT.email}</p>
                 <div className="mt-3 flex gap-2">
-                  <a
-                    href={`mailto:${CONTACT.email}`}
-                    className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-sm bg-slate-900 text-white hover:bg-slate-800"
-                  >
-                    <Send className="size-4" /> 메일 쓰기
-                  </a>
                   <button
                     onClick={handleCopy}
                     className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-sm hover:bg-slate-100"
@@ -239,7 +242,7 @@ export default function ContactSection() {
 
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium mb-1">이름</label>
+              <label className="block text-sm font-medium mb-1">보내는 분 성함</label>
               <input
                 type="text"
                 value={form.name}
@@ -250,10 +253,11 @@ export default function ContactSection() {
               {errors.name && <p className="mt-1 text-xs  text-red-500">{errors.name}</p>}
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">이메일</label>
+              <label className="block text-sm font-medium mb-1">전송할 이메일</label>
               <input
                 type="email"
-                value={form.email}
+                value={'nas7062@naver.com'}
+                readOnly
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 placeholder="you@example.com"
                 className={`w-full rounded-xl border px-3 py-2 outline-none focus:ring-2 focus:ring-slate-400 ${errors.email ? 'border-red-400' : 'border-slate-200'}`}
@@ -275,12 +279,18 @@ export default function ContactSection() {
           </div>
 
           <div className="mt-6 flex justify-end">
-            <button
-              type="submit"
-              className="inline-flex items-center gap-2 rounded-xl border px-4 py-2 bg-slate-900 text-white hover:bg-slate-800"
+            <a
+              href={gmailComposeUrl(
+                CONTACT.email,
+                `[Portfolio] ${form.name}님의 문의`,
+                `From: ${form.name} <${form.email}>\n\n${form.message}`
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border px-4 py-2 hover:bg-slate-100"
             >
-              <Send className="size-4" /> 메일로 보내기
-            </button>
+              Gmail로 보내기
+            </a>
           </div>
         </motion.form>
       </motion.div>
