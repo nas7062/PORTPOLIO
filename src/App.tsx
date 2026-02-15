@@ -1,4 +1,5 @@
 import ContactSection from './components/ContactSection';
+import ExperienceSection from './components/ExperienceSection';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ParallaxSection from './components/ParallaxSection';
@@ -13,11 +14,12 @@ function App() {
       <div className="z-10 w-full overflow-y-hidden  snap-y snap-mandatory ">
         <Hero />
         <ParallaxSection />
+        <ExperienceSection />
         <ProjectSection />
         <ContactSection />
       </div>
     </div>
   );
 }
-  
+
 export default App;

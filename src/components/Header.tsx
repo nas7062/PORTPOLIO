@@ -4,6 +4,7 @@ import logoImage from '../assets/logo.png';
 const links = [
   { id: 'home', label: 'HOME' },
   { id: 'about', label: 'ABOUT' },
+  { id: 'experience', label: 'EXPERIENCE' },
   { id: 'project', label: 'PROJECT' },
   { id: 'contact', label: 'CONTACT' },
 ];

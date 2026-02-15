@@ -30,7 +30,7 @@ export default function HamButton({ isOpen, onToggle, className = '', label = 'M
       onClick={toggle}
       initial={false}
       animate={open ? 'open' : 'closed'}
-      className={`absolute left-16 top-4  z-50 inline-flex h-10 w-10 items-center justify-center
+      className={`absolute left-4 top-4  z-50 inline-flex h-10 w-10 items-center justify-center
                   text-neutral-900 dark:text-white cursor-pointer ${className}`}
     >
       <motion.span
