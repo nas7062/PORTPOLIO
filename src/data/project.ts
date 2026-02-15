@@ -9,7 +9,7 @@ export const projects = [
     id: 0,
     title: 'SIMVEX - TDP',
     description: `교과서 그림만으로는 이해하기 어려운 복잡한 기계 구조, 이제 3D로 돌려보고 분해하며 배우세요.
-SIMVEX는 3D 기계 모델을 활용한 인터랙티브 학습 플랫폼입니다. 사용자는 다양한 기계 구조를 3D로 시각화하고, 분해하며, 퀴즈를 통해 학습할 수 있습니다. `,
+SIMVEX는 3D 기계 모델을 활용한 인터랙티브 학습 플랫폼입니다. `,
     stack: ['Next.js', 'Tailwind', 'three.js(R3F)', 'TypeScript'],
     image: A2,
     group: 'PM1,디자이너1,백엔드2,프론트2',
