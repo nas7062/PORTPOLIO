@@ -83,7 +83,7 @@ export default function ProjectDetailModal({
               <img
                 src={project.image}
                 alt={`${project.title} 이미지`}
-                className="w-60 h-60 self-center object-cover rounded-xl"
+                className="aspect-video w-full self-center object-cover rounded-xl"
                 loading="lazy"
               />
             )}
