@@ -133,18 +133,24 @@ export default function ProjectDetailModal({
         {/* 하단 버튼 고정 */}
         <div className="border-t p-4 md:p-5 flex justify-end gap-2 shrink-0">
           {project.github && (
-            <button onClick={() => resolve('go-github')} className="px-3 py-1.5 border rounded">
+            <button
+              onClick={() => resolve('go-github')}
+              className="px-3 py-1.5 border rounded cursor-pointer hover:bg-black hover:text-white transition-colors duration-200"
+            >
               GitHub
             </button>
           )}
           {project.demo && (
-            <button onClick={() => resolve('go-demo')} className="px-3 py-1.5 border rounded">
+            <button
+              onClick={() => resolve('go-demo')}
+              className="px-3 py-1.5 border rounded cursor-pointer hover:bg-black hover:text-white transition-colors duration-200"
+            >
               View Site
             </button>
           )}
           <button
             onClick={() => resolve('close')}
-            className="px-3 py-1.5 bg-black text-white rounded"
+            className="px-3 py-1.5 bg-black text-white rounded cursor-pointer"
           >
             닫기
           </button>
