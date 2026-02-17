@@ -1,17 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import {
-  Mail,
-  Github,
-  Linkedin,
-  Download,
-  MapPin,
-  Copy,
-  Check,
-  Send,
-  Pencil,
-  Phone,
-} from 'lucide-react';
+import { Mail, Github, Linkedin, Download, Copy, Check, Pencil, Phone } from 'lucide-react';
 
 const CONTACT = {
   email: 'nas7062@naver.com',
@@ -66,8 +55,8 @@ export default function ContactSection() {
       subject
     )}&body=${encodeURIComponent(body)}`;
 
-  const RESUME_URL = '/resume/김민석_이력서.pdf';
-  const PORT_URL = '/portfolio/김민석-포트폴리오.pdf';
+  const RESUME_URL = '/resume/2026_김민석_이력서.pdf';
+  const PORT_URL = '/portfolio/2026_김민석_포트폴리오.pdf';
   return (
     <section
       id="contact"
