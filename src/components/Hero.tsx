@@ -78,7 +78,7 @@ export default function Hero() {
     >
       <Title
         direction="left"
-        className="sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl xl:right-[6%] md:right-[15%] text-3xl font-bold tracking-widest text-gray-700 relative"
+        className="sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl xl:right-[4%] md:right-[15%] text-3xl font-bold tracking-widest text-gray-700 relative"
       >
         FRONTEND DEVELOPER
       </Title>

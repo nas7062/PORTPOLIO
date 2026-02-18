@@ -12,6 +12,7 @@ export const projects = [
 SIMVEX는 3D 기계 모델을 활용한 인터랙티브 학습 플랫폼입니다. `,
     stack: ['Next.js', 'Tailwind', 'three.js(R3F)', 'TypeScript'],
     image: A2,
+    date: '2026.02.01 ~ 2026.02.10 ',
     group: 'PM1,디자이너1,백엔드2,프론트2',
     github: 'https://github.com/nas7062/TDP',
     demo: 'https://simvex-tdp.vercel.app/',
