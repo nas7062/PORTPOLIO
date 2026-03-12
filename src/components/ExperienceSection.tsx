@@ -37,9 +37,9 @@ export default function ExperienceSection() {
               <div>
                 <h4 className="font-semibold">3D Web</h4>
                 <p className="text-sm text-slate-600">
-                  Three.js, React Three Fiber (R3F)
+                o Three.js, React Three Fiber (R3F)
                   <br />
-                  GLTF 모델 렌더링 및 사용자 인터랙션 구현
+                  o GLTF 모델 렌더링 및 사용자 인터랙션 구현
                 </p>
               </div>
 
@@ -47,28 +47,39 @@ export default function ExperienceSection() {
               <div>
                 <h4 className="font-semibold">Collaboration</h4>
                 <p className="text-sm text-slate-600">
-                  GitHub (Branch 전략, PR 기반 협업)
+                o GitHub (Branch 전략, PR 기반 협업)
                   <br />
-                  GitHub Actions 기반 CI/CD
+                  o GitHub Actions 기반 CI/CD
                   <br />
-                  Jira, Figma, Slack 협업 경험
+                  o Jira, Figma, Slack 협업 경험
+                </p>
+              </div>
+              {/*Testing */}
+              <div>
+              <h4 className="font-semibold">Testing</h4>
+                <p className="text-sm text-slate-600">
+                o Unit Test 및 E2E Test 작성으로 핵심 기능 안정성 확보
+                <br />
+                o CI 환경에서 테스트 자동화 구축으로 배포 전 오류 검증
+                <br />
+                o 사용자 시나리오 기반 테스트로 주요 기능 회귀 버그 방지
                 </p>
               </div>
               {/* BackEnd */}
               <div>
                 <h4 className="font-semibold">Backend</h4>
                 <p className="text-sm text-slate-600">
-                  Supabase 기반 인증 및 데이터베이스 연동 경험
+                o Supabase 기반 인증 및 데이터베이스 연동 경험
                   <br />
-                  Node.js / Java 기반 CRUD API 및 인증·인가 로직 구현
+                  o Node.js / Java 기반 CRUD API 및 인증·인가 로직 구현
                   <br />
-                  RESTful API 설계 및 클라이언트 연동 경험
+                  o RESTful API 설계 및 클라이언트 연동 경험
                 </p>
               </div>
               {/* Mobile */}
               <div>
                 <h4 className="font-semibold">Mobile</h4>
-                <p className="text-sm text-slate-600">React Native 기반 모바일 화면 구현 경험</p>
+                <p className="text-sm text-slate-600">o React Native 기반 모바일 화면 구현 경험</p>
               </div>
             </div>
           </div>
