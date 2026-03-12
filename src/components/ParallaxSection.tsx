@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, type Variants } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, type Variants } from 'framer-motion';
 import { useRef } from 'react';
 import profileImage from '../assets/profile.jpg';
 
@@ -21,10 +21,20 @@ const fadeUp: Variants = {
 
 export default function ParallaxSection() {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+  const { scrollYProgress } = useScroll({ 
+    target: ref, 
+    offset: ['start end', 'end start']
+  });
 
-  const yBg = useTransform(scrollYProgress, [0, 1], [0, -120]);
-  const yFg = useTransform(scrollYProgress, [0, 1], [0, 60]);
+  // 스프링 효과로 부드러운 애니메이션
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  const yBg = useTransform(smoothProgress, [0, 1], [0, -120]);
+  const yFg = useTransform(smoothProgress, [0, 1], [0, 60]);
 
   return (
     <motion.section
@@ -36,11 +46,14 @@ export default function ParallaxSection() {
       whileInView="show"
       viewport={{ amount: 0.35, once: true }}
     >
-      <motion.div style={{ y: yBg }} className="absolute inset-0 -z-10 bg-neutral-50" />
+      <motion.div 
+        style={{ y: yBg, willChange: 'transform' }} 
+        className="absolute inset-0 -z-10 bg-neutral-50"
+      />
       <div className="sticky top-0 h-[105svh] flex flex-col items-center justify-center px-6 md:px-10">
         <motion.h2
           variants={fadeUp}
-          style={{ y: yFg }}
+          style={{ y: yFg, willChange: 'transform' }}
           className="mb-6 text-center text-4xl font-bold text-neutral-900 md:mb-10 md:text-5xl absolute top-20"
         >
           ABOUT ME
@@ -48,7 +61,7 @@ export default function ParallaxSection() {
 
         <motion.p
           variants={fadeUp}
-          style={{ y: yFg }}
+          style={{ y: yFg, willChange: 'transform' }}
           className="mb-10 text-center text-2xl font-semibold text-neutral-800 md:mb-12 md:text-4xl"
         >
           안녕하세요, 저는 프론트엔드 개발자 김민석입니다.
