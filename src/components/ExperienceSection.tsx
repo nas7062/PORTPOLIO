@@ -62,7 +62,7 @@ export default function ExperienceSection() {
                 <br />
                 o CI 환경에서 테스트 자동화 구축으로 배포 전 오류 검증
                 <br />
-                o 사용자 시나리오 기반 테스트로 주요 기능 회귀 버그 방지
+                o 사용자 시나리오 기반 테스트로 주요 기능 버그 방지
                 </p>
               </div>
               {/* BackEnd */}
