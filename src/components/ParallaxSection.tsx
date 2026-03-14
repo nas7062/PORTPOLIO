@@ -68,24 +68,24 @@ export default function ParallaxSection() {
         </motion.p>
 
         <motion.div
-          variants={fadeUp}
-          className="flex w-full max-w-5xl items-center justify-center gap-8 md:gap-12"
-        >
-          <p className="w-full max-w-xl text-base leading-relaxed text-neutral-700 md:text-2xl">
-            저는 사용자 경험을 중요시 하며 빠르게 발전하는 프론트엔드 기술을 습득하는 과정에서 큰
-            즐거움을 느낍니다. 또한 꾸준한 성장을 위해 노력하며 팀 활동에서는 맡은 업무에 책임감을
-            갖고 기간 내 달성할 수 있으며 팀원들과의 의사소통과 협력을 최우선으로 생각합니다.
-          </p>
+  variants={fadeUp}
+  className="flex flex-col md:flex-row w-full max-w-5xl items-center justify-center gap-6 md:gap-12"
+>
+  <p className="w-full text-sm sm:text-base md:text-2xl leading-relaxed text-neutral-700 text-center md:text-left px-4 md:px-0">
+    저는 사용자 경험을 중요시 하며 빠르게 발전하는 프론트엔드 기술을 습득하는 과정에서 큰
+    즐거움을 느낍니다. 또한 꾸준한 성장을 위해 노력하며 팀 활동에서는 맡은 업무에 책임감을
+    갖고 기간 내 달성할 수 있으며 팀원들과의 의사소통과 협력을 최우선으로 생각합니다.
+  </p>
 
-          <div className="h-64 w-64 overflow-hidden rounded-full md:h-80 md:w-80">
-            <img
-              src={profileImage}
-              alt="김민석 프로필 사진"
-              loading="lazy"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </motion.div>
+  <div className="h-40 w-40 sm:h-56 sm:w-56 md:h-80 md:w-80 overflow-hidden rounded-full flex-shrink-0 shadow-lg">
+    <img
+      src={profileImage}
+      alt="김민석 프로필 사진"
+      loading="lazy"
+      className="h-full w-full object-cover"
+    />
+  </div>
+</motion.div>
       </div>
     </motion.section>
   );

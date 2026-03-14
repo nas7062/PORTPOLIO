@@ -31,7 +31,7 @@ export default function ProjectSection() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="flex h-88 sm:h-80 flex-col sm:flex-row w-full text-center  items-center  border border-gray-200   shadow-md hover:shadow-xl  hover:-translate-y-2 transform transition-all duration-300 rounded-xl overflow-hidden"
+              className="flex h-92 sm:h-80  p-2 flex-col sm:flex-row w-full text-center  items-center  border border-gray-200   shadow-md hover:shadow-xl  hover:-translate-y-2 transform transition-all duration-300 rounded-xl overflow-hidden"
             >
               <div className="flex flex-col justify-center">
                 {project.image ? (
@@ -54,7 +54,7 @@ export default function ProjectSection() {
                 <div className="text-xs sm:text-base mt-2">팀원:{project.group}</div>
               </div>
 
-              <div className="flex flex-col flex-1 p-4 h-full  items-center gap-2 ">
+              <div className="flex flex-col flex-1 p-2 sm:p-4 h-full  items-center gap-2 ">
                 <p className="text-md sm:text-2xl  ">{project.title}</p>
                 <p className="sm:px-2 text-gray-600 text-xs sm:text-base">{project.description}</p>
                 <div className="py-1 flex flex-wrap gap-1 sm:mt-2 ">
@@ -68,10 +68,10 @@ export default function ProjectSection() {
                   ))}
                 </div>
 
-                <div className="flex sm:justify-center gap-1 sm:gap-10 mt-auto">
+                <div className="flex w-full  sm:justify-center gap-1 sm:gap-10 mt-auto ">
                   <button
                     onClick={() => openDetail(project)}
-                    className="cursor-pointer border border-gray-300  rounded-lg text-xs sm:text-base text-white px-2 py-1 bg-gray-800 hover:bg-gray-300 hover:text-gray-800"
+                    className="flex-1 cursor-pointer border border-gray-300  rounded-lg text-xs sm:text-base text-white px-2 py-1 bg-gray-800 hover:bg-gray-700 "
                   >
                     상세 보기
                   </button>
@@ -79,7 +79,7 @@ export default function ProjectSection() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border border-gray-300 rounded-lg text-xs  sm:text-base text-white px-2 py-1 bg-gray-800 hover:bg-gray-300 cursor-pointer hover:text-gray-800"
+                    className="flex-1 border border-gray-300 rounded-lg text-xs  sm:text-base text-white px-2 py-1 bg-gray-800 hover:bg-gray-700 cursor-pointer "
                   >
                     Github
                   </a>

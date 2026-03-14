@@ -124,7 +124,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className=" min-h-screen scroll-mt-20 px-6 md:px-10 lg:px-16 py-16 bg-gradient-to-b from-white to-slate-50"
+      className=" min-h-screen scroll-mt-20 px-4 md:px-10 lg:px-16 py-16 bg-gradient-to-b from-white to-slate-50"
     >
       <motion.div
         initial={{ opacity: 0, y: 200 }}
@@ -140,7 +140,7 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 gap-6 mb-12 ">
           <motion.div
             whileHover={{ y: -4 }}
             className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm "
