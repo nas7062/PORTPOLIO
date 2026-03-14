@@ -40,7 +40,7 @@ export default function ParallaxSection() {
     <motion.section
       ref={ref}
       id="about" // 헤더 클릭 시 about으로 가게끔
-      className="relative h-svh overflow-clip snap-start mt-20 "
+      className="relative h-svh overflow-clip snap-start  "
       variants={container}
       initial="hidden"
       whileInView="show"
@@ -50,7 +50,7 @@ export default function ParallaxSection() {
         style={{ y: yBg, willChange: 'transform' }} 
         className="absolute inset-0 -z-10 bg-neutral-50"
       />
-      <div className="sticky top-0 h-[105svh] flex flex-col items-center justify-center px-6 md:px-10">
+      <div className="sticky top-0 h-[90svh] sm:h-[105svh] flex flex-col items-center justify-center px-6 md:px-10">
         <motion.h2
           variants={fadeUp}
           style={{ y: yFg, willChange: 'transform' }}
@@ -64,7 +64,7 @@ export default function ParallaxSection() {
           style={{ y: yFg, willChange: 'transform' }}
           className="mb-10 text-center text-2xl font-semibold text-neutral-800 md:mb-12 md:text-4xl"
         >
-          안녕하세요, 저는 프론트엔드 개발자 김민석입니다.
+          안녕하세요 저는 프론트엔드 개발자 김민석입니다.
         </motion.p>
 
         <motion.div

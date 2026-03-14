@@ -2,7 +2,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="min-h-screen scroll-mt-20 px-6 md:px-10 lg:px-16 py-20 bg-white"
+      className="min-h-screen scroll-mt-20 px-6 md:px-10 lg:px-16 py-10 bg-white"
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
