@@ -71,11 +71,14 @@ export default function ParallaxSection() {
   variants={fadeUp}
   className="flex flex-col md:flex-row w-full max-w-5xl items-center justify-center gap-6 md:gap-12"
 >
-  <p className="w-full text-sm sm:text-base md:text-2xl leading-relaxed text-neutral-700 text-center md:text-left px-4 md:px-0">
-    저는 사용자 경험을 중요시 하며 빠르게 발전하는 프론트엔드 기술을 습득하는 과정에서 큰
-    즐거움을 느낍니다. 또한 꾸준한 성장을 위해 노력하며 팀 활동에서는 맡은 업무에 책임감을
-    갖고 기간 내 달성할 수 있으며 팀원들과의 의사소통과 협력을 최우선으로 생각합니다.
-  </p>
+<p className="w-full text-sm sm:text-base md:text-2xl leading-relaxed text-neutral-700 text-center md:text-left px-4 md:px-0">
+  사용자 경험을  중요하게 생각하는 프론트엔드 개발자입니다. 
+  새로운 기술을 배우고 적용하는 것을 좋아하며 
+  해커톤과 팀 프로젝트를 통해 협업 능력과 실전 경험을 쌓아왔습니다. 
+  꾸준한 학습을 통해 지속적으로 성장하고 있으며 
+  팀원들과의 소통과 책임감 있는 업무 수행을 통해 
+  함께 성장하는 프론트엔드 개발자가 되고 싶습니다.
+</p>
 
   <div className="h-40 w-40 sm:h-56 sm:w-56 md:h-80 md:w-80 overflow-hidden rounded-full flex-shrink-0 shadow-lg">
     <img

@@ -13,7 +13,7 @@ export default function ScrollProgress() {
       <motion.img
         src={CharImage}
         alt="character"
-        className="absolute -top-1.5 h-10 w-10 select-none drop-shadow hidden sm:block"
+        className="absolute -top-0 left-3 h-6 w-6 select-none drop-shadow hidden sm:block"
         style={{ x }}
         draggable={false}
       />
