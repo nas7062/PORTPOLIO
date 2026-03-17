@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import HamButton from './HamButton';
+import ThemeToggle from './ThemeToggle';
 const links = [
   { id: 'home', label: 'HOME' },
   { id: 'about', label: 'ABOUT' },
@@ -27,9 +28,9 @@ export default function Header() {
           onClick={() => scrollToId('home')}
           className="absolute hidden sm:block left-4 md:left-16 cursor-pointer hover:opacity-70 transition-opacity"
         >
-        <span className="text-xl md:text-3xl font-semibold tracking-[0.15em] text-neutral-800 transition-colors">
-          10012
-        </span>
+          <span className="text-xl md:text-3xl font-semibold tracking-[0.15em] transition-colors">
+            10012
+          </span>
         </button>
         {/* 오른쪽: 링크(데스크톱) */}
         <nav className="absolute right-32 text-2xl hidden md:flex  items-center gap-8 ">
@@ -42,6 +43,7 @@ export default function Header() {
               {l.label}
             </button>
           ))}
+          <ThemeToggle />
         </nav>
       </div>
 

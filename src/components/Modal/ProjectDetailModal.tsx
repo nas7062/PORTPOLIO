@@ -68,7 +68,7 @@ export default function ProjectDetailModal({
       onClick={() => resolve('close')}
     >
       <div
-        className="w-[min(800px,92vw)] h-[85vh] bg-white rounded-2xl shadow-xl flex flex-col"
+        className="w-[min(800px,92vw)] h-[85vh] bg-white  rounded-2xl shadow-xl flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* 내부 스크롤러 */}
@@ -89,7 +89,7 @@ export default function ProjectDetailModal({
             )}
 
             <div className="flex-1 min-w-0">
-              <h2 id="project-modal-title" className="text-xl font-semibold">
+              <h2 id="project-modal-title" className="text-xl font-semibold text-black">
                 {project.title}
               </h2>
               {project.group && (
@@ -112,10 +112,10 @@ export default function ProjectDetailModal({
               </div>
 
               <div className="mt-4">
-                <p className="text-lg font-semibold">{project.detail?.title}</p>
+                <p className="text-lg font-semibold text-black">{project.detail?.title}</p>
                 {project.detail?.sections?.map((section) => (
                   <div key={section.name} className="mt-3">
-                    <p className="font-medium">{section.name}</p>
+                    <p className="font-medium text-black">{section.name}</p>
                     <ul className="list-disc pl-5 mt-1 space-y-1">
                       {section.bullets.map((b, i) => (
                         <li key={i} className="text-sm font-light text-gray-600">
@@ -135,7 +135,7 @@ export default function ProjectDetailModal({
           {project.github && (
             <button
               onClick={() => resolve('go-github')}
-              className="px-3 py-1.5 border rounded cursor-pointer hover:bg-black hover:text-white transition-colors duration-200"
+              className="px-3 py-1.5 border rounded cursor-pointer bg-gray-800 hover:bg-black hover:text-white transition-colors duration-200"
             >
               GitHub
             </button>
@@ -143,7 +143,7 @@ export default function ProjectDetailModal({
           {project.demo && (
             <button
               onClick={() => resolve('go-demo')}
-              className="px-3 py-1.5 border rounded cursor-pointer hover:bg-black hover:text-white transition-colors duration-200"
+              className="px-3 py-1.5 border rounded cursor-pointer  bg-gray-800 hover:bg-black hover:text-white transition-colors duration-200"
             >
               View Site
             </button>

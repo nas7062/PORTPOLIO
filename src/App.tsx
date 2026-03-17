@@ -18,6 +18,8 @@ function App() {
         <ProjectSection />
         <ContactSection />
       </div>
+      
+      
     </div>
   );
 }
