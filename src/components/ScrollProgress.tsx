@@ -7,7 +7,7 @@ export default function ScrollProgress() {
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-[9999]">
       {/* 진행 바 */}
-      <motion.div className="h-1.5 origin-left bg-black/90" style={{ scaleX: scrollYProgress }} />
+      <motion.div className="h-1.5 origin-left bg-black/90 dark:bg-white/90s" style={{ scaleX: scrollYProgress }} />
 
       {/* 캐릭터 이미지 */}
       <motion.img
