@@ -48,13 +48,13 @@ export default function ParallaxSection() {
     >
       <motion.div 
         style={{ y: yBg, willChange: 'transform' }} 
-        className="absolute inset-0 -z-10 bg-neutral-50"
+        className="absolute inset-0 -z-10 "
       />
       <div className="sticky top-0 h-[90svh] sm:h-[105svh] flex flex-col items-center justify-center px-6 md:px-10">
         <motion.h2
           variants={fadeUp}
           style={{ y: yFg, willChange: 'transform' }}
-          className="mb-6 text-center text-4xl font-bold text-neutral-900 md:mb-10 md:text-5xl absolute top-20"
+          className="mb-6 text-center text-4xl font-bold  md:mb-10 md:text-5xl absolute top-20"
         >
           ABOUT ME
         </motion.h2>
@@ -62,7 +62,7 @@ export default function ParallaxSection() {
         <motion.p
           variants={fadeUp}
           style={{ y: yFg, willChange: 'transform' }}
-          className="mb-10 text-center text-2xl font-semibold text-neutral-800 md:mb-12 md:text-4xl"
+          className="mb-10 text-center text-2xl font-semibold  md:mb-12 md:text-4xl"
         >
           안녕하세요 저는 프론트엔드 개발자 김민석입니다.
         </motion.p>
@@ -71,7 +71,7 @@ export default function ParallaxSection() {
   variants={fadeUp}
   className="flex flex-col md:flex-row w-full max-w-4xl items-center justify-center gap-6 md:gap-12"
 >
-<p className="w-full text-sm sm:text-base md:text-2xl leading-relaxed text-neutral-700 text-center md:text-left px-4 md:px-0">
+<p className="w-full text-sm sm:text-base md:text-2xl leading-relaxed  text-center md:text-left px-4 md:px-0">
 <span className="text-blue-500 font-semibold">사용자 경험</span>을 중요하게 생각하는 프론트엔드 개발자입니다.
 <span className="text-blue-500 font-semibold"> 새로운 기술</span>을 배우고 적용하는 것을 좋아하며  
 해커톤과 팀 프로젝트를 통해 <span className="text-blue-500 font-semibold">협업 능력</span>과 실전 경험을 쌓아왔습니다.  

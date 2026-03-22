@@ -124,7 +124,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className=" min-h-screen scroll-mt-20 px-4 md:px-10 lg:px-16 py-16 bg-gradient-to-b from-white to-slate-50"
+      className=" min-h-screen scroll-mt-20 px-4 md:px-10 lg:px-16 py-16 "
     >
       <motion.div
         initial={{ opacity: 0, y: 200 }}
@@ -135,7 +135,7 @@ export default function ContactSection() {
       >
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">CONTACT</h2>
-          <p className="mt-3 text-lg text-slate-600">
+          <p className="mt-3 text-lg ">
             봐주셔서 감사합니다. 어떤 이야기든 편하게 연락 주세요!
           </p>
         </div>
@@ -143,19 +143,19 @@ export default function ContactSection() {
         <div className="grid md:grid-cols-2 gap-6 mb-12 ">
           <motion.div
             whileHover={{ y: -4 }}
-            className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm "
+            className="group rounded-2xl border border-slate-200  p-5 shadow-sm "
           >
             <div className="flex items-start gap-4">
-              <div className="rounded-xl border p-3 bg-slate-50">
+              <div className="rounded-xl border p-3 ">
                 <Mail className="size-6" />
               </div>
               <div className="flex-1">
                 <h3 className="font-semibold text-lg">이메일</h3>
-                <p className="text-slate-600 break-all">{CONTACT.email}</p>
+                <p className=" break-all">{CONTACT.email}</p>
                 <div className="mt-3 flex gap-2">
                   <button
                     onClick={handleCopy}
-                    className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-sm hover:bg-slate-100"
+                    className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-sm cursor-pointer "
                   >
                     {copied ? <Check className="size-4" /> : <Copy className="size-4" />}
                     {copied ? '복사됨' : '주소 복사'}
@@ -166,15 +166,15 @@ export default function ContactSection() {
           </motion.div>
           <motion.div
             whileHover={{ y: -4 }}
-            className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+            className="group rounded-2xl border border-slate-200  p-5 shadow-sm"
           >
             <div className="flex items-start gap-4">
-              <div className="rounded-xl border p-3 bg-slate-50">
+              <div className="rounded-xl border p-3 ">
                 <Download className="size-6" />
               </div>
               <div className="flex-1">
                 <h3 className="font-semibold text-lg">이력서 / 포트폴리오</h3>
-                <p className="text-slate-600">PDF 파일을 바로 다운로드.</p>
+                <p >PDF 파일을 바로 다운로드.</p>
 
                 <div className="mt-3 flex gap-2">
                   <a
@@ -190,7 +190,7 @@ export default function ContactSection() {
                   <a
                     href={PORT_URL}
                     download="Portfolio_KimMinseok_2025.pdf"
-                    className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-sm hover:bg-slate-100"
+                    className="inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-sm "
                   >
                     <Download className="size-4" />
                     포트폴리오
@@ -202,10 +202,10 @@ export default function ContactSection() {
 
           <motion.div
             whileHover={{ y: -4 }}
-            className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+            className="group rounded-2xl border border-slate-200  p-5 shadow-sm"
           >
             <div className="flex items-start gap-4">
-              <div className="rounded-xl border p-3 bg-slate-50">
+              <div className="rounded-xl border p-3 ">
                 <Github className="size-6" />
               </div>
               <div className="flex-1">
@@ -214,7 +214,7 @@ export default function ContactSection() {
                   href={CONTACT.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-700 underline underline-offset-4 decoration-slate-300 hover:decoration-slate-800"
+                  className=" underline underline-offset-4 "
                 >
                   {CONTACT.github}
                 </a>
@@ -224,10 +224,10 @@ export default function ContactSection() {
 
           <motion.div
             whileHover={{ y: -4 }}
-            className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+            className="group rounded-2xl border border-slate-200  p-5 shadow-sm"
           >
             <div className="flex items-start gap-4">
-              <div className="rounded-xl border p-3 bg-slate-50">
+              <div className="rounded-xl border p-3 ">
                 <Linkedin className="size-6" />
               </div>
               <div className="flex-1 ">
@@ -236,7 +236,7 @@ export default function ContactSection() {
                   href={CONTACT.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-700   underline underline-offset-4  decoration-slate-300 hover:decoration-slate-800"
+                  className="   underline underline-offset-4 "
                 >
                   LinkedIn Profile
                 </a>
@@ -245,10 +245,10 @@ export default function ContactSection() {
           </motion.div>
           <motion.div
             whileHover={{ y: -4 }}
-            className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+            className="group rounded-2xl border border-slate-200  p-5 shadow-sm"
           >
             <div className="flex items-start gap-4">
-              <div className="rounded-xl border p-3 bg-slate-50">
+              <div className="rounded-xl border p-3 ">
                 <Pencil className="size-6" />
               </div>
               <div className="flex-1 ">
@@ -257,7 +257,7 @@ export default function ContactSection() {
                   href={CONTACT.velog}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-700   underline underline-offset-4  decoration-slate-300 hover:decoration-slate-800"
+                  className="   underline underline-offset-4  "
                 >
                   https://velog.io/@10012/posts
                 </a>
@@ -266,15 +266,15 @@ export default function ContactSection() {
           </motion.div>
           <motion.div
             whileHover={{ y: -4 }}
-            className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+            className="group rounded-2xl border border-slate-200  p-5 shadow-sm"
           >
             <div className="flex items-start gap-4">
-              <div className="rounded-xl border p-3 bg-slate-50">
+              <div className="rounded-xl border p-3 ">
                 <Phone className="size-6" />
               </div>
               <div className="flex-1">
                 <h3 className="font-semibold text-lg">휴대폰 번호</h3>
-                <p className="text-slate-600">{CONTACT.Phone}</p>
+                <p className="">{CONTACT.Phone}</p>
               </div>
             </div>
           </motion.div>
@@ -287,7 +287,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.05 }}
-          className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+          className="rounded-2xl border border-slate-200  p-6 shadow-sm"
         >
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-xl font-semibold">메시지 보내기</h3>

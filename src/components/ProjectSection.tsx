@@ -56,7 +56,7 @@ export default function ProjectSection() {
 
               <div className="flex flex-col flex-1 p-2 sm:p-4 h-full  items-center gap-2 ">
                 <p className="text-md sm:text-2xl  ">{project.title}</p>
-                <p className="sm:px-2 text-gray-600 text-xs sm:text-base">{project.description}</p>
+                <p className="sm:px-2  text-xs sm:text-base">{project.description}</p>
                 <div className="py-1 flex flex-wrap gap-1 sm:mt-2 ">
                   {project.stack?.map((st, idx) => (
                     <span
@@ -71,7 +71,7 @@ export default function ProjectSection() {
                 <div className="flex w-full  sm:justify-center gap-1 sm:gap-10 mt-auto ">
                   <button
                     onClick={() => openDetail(project)}
-                    className="flex-1 cursor-pointer border border-gray-300  rounded-lg text-xs sm:text-base text-white px-2 py-1 bg-gray-800 hover:bg-gray-700 "
+                    className="flex-1 cursor-pointer border  rounded-lg text-xs sm:text-base text-white px-2 py-1 bg-gray-800 hover:bg-gray-700 "
                   >
                     상세 보기
                   </button>
@@ -79,7 +79,7 @@ export default function ProjectSection() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 border border-gray-300 rounded-lg text-xs  sm:text-base text-white px-2 py-1 bg-gray-800 hover:bg-gray-700 cursor-pointer "
+                    className="flex-1 border  rounded-lg text-xs  sm:text-base text-white px-2 py-1 bg-gray-800 hover:bg-gray-700 cursor-pointer "
                   >
                     Github
                   </a>
