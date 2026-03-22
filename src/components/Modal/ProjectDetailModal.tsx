@@ -135,7 +135,7 @@ export default function ProjectDetailModal({
           {project.github && (
             <button
               onClick={() => resolve('go-github')}
-              className="px-3 py-1.5 border rounded cursor-pointer text-white hover:bg-black hover:text-white transition-colors duration-200"
+              className="px-3 py-1.5 border rounded cursor-pointer text-white bg-gray-800 hover:bg-black  transition-colors duration-200"
             >
               GitHub
             </button>
@@ -143,7 +143,7 @@ export default function ProjectDetailModal({
           {project.demo && (
             <button
               onClick={() => resolve('go-demo')}
-              className="px-3 py-1.5 border rounded cursor-pointer text-white hover:bg-black hover:text-white transition-colors duration-200"
+              className="px-3 py-1.5 border rounded cursor-pointer text-white bg-gray-800 hover:bg-black  transition-colors duration-200"
             >
               View Site
             </button>
