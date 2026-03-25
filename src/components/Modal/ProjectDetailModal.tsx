@@ -104,7 +104,7 @@ export default function ProjectDetailModal({
                 {project.stack?.map((st, i) => (
                   <span
                     key={i}
-                    className="text-xs border text-white bg-sky-400 border-sky-400 rounded-lg px-2 py-1"
+                    className="text-xs border text-white bg-blue-500 border-blue-500 rounded-lg px-2 py-1"
                   >
                     {st}
                   </span>
@@ -117,11 +117,21 @@ export default function ProjectDetailModal({
                   <div key={section.name} className="mt-3">
                     <p className="font-medium text-black">{section.name}</p>
                     <ul className="list-disc pl-5 mt-1 space-y-1">
-                      {section.bullets.map((b, i) => (
-                        <li key={i} className="text-sm font-light text-gray-600">
-                          {b}
-                        </li>
-                      ))}
+                      {section.bullets.map((b, i) => {
+                        const parts = b.split('—');
+                        return (
+                          <li key={i} className="text-sm font-light text-gray-600">
+                            {parts.length > 1 ? (
+                              <>
+                                {parts[0]}—
+                                <span className="text-emerald-500 font-medium">{parts[1]}</span>
+                              </>
+                            ) : (
+                              b
+                            )}
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 ))}
